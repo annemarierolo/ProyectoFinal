@@ -55,7 +55,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'from' => ['address' => env('MAIL_FROM'), 'name' => env('MAIL_NAME')],
+=======
+    'from' => ['address' => null, 'name' => null],
+>>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1
 
     /*
     |--------------------------------------------------------------------------

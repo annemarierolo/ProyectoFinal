@@ -7,8 +7,12 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
+<<<<<<< HEAD
         "spatie/laravel-permission": "^1.5",
         "laravel/socialite": "^2.0"
+=======
+        "spatie/laravel-permission": "^1.5"
+>>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

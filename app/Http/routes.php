@@ -36,6 +36,7 @@ Route::get('/contacto', function () {
     return view('contact');
 });
 
+<<<<<<< HEAD
 
 Route::get('/home', 'HomeController@index');
 Route::get('user/activation/{token}', 'Auth\AuthController@activateUser')->name('user.activate');
@@ -44,3 +45,6 @@ Route::get('/redirect/{provider}', 'SocialAuthController@redirect');
 Route::get('/callback/{provider}', 'SocialAuthController@callback');
 
 Route::get('user/activation/{token}', 'Auth\AuthController@activateUser')->name('user.activate');
+=======
+Route::get('/home', 'HomeController@index');
+>>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1

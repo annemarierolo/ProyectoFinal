@@ -7,8 +7,11 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+<<<<<<< HEAD
 use Illuminate\Http\Request;
 use App\ActivationService;
+=======
+>>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1
 
 class AuthController extends Controller
 {
@@ -23,9 +26,13 @@ class AuthController extends Controller
     |
     */
 
+<<<<<<< HEAD
     
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
     protected $activationService;
+=======
+    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+>>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1
 
     /**
      * Where to redirect users after login / registration.
@@ -39,6 +46,7 @@ class AuthController extends Controller
      *
      * @return void
      */
+<<<<<<< HEAD
     public function __construct(ActivationService $activationService)
     {
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
@@ -63,6 +71,11 @@ class AuthController extends Controller
         $this->activationService->sendActivationMail($user);
 
         return redirect('/login')->with('status', 'We sent you an activation code. Check your email.');
+=======
+    public function __construct()
+    {
+        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
+>>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1
     }
 
     /**
@@ -94,6 +107,7 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+<<<<<<< HEAD
 
     public function authenticated(Request $request, $user)
     {
@@ -114,4 +128,6 @@ class AuthController extends Controller
         abort(404);
     }
 
+=======
+>>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1
 }

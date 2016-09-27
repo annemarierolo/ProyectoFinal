@@ -35,6 +35,7 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+<<<<<<< HEAD
     'facebook' => [
         'client_id' => '1308322249180484',
         'client_secret' => '483149354ccae56279336a1b18289e46',
@@ -49,4 +50,6 @@ return [
     ],
 
 
+=======
+>>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1
 ];

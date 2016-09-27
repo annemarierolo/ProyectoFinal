@@ -39,6 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="top-banner-right">
                     <ul>
+<<<<<<< HEAD
                         @if(Auth::guest())
                              <li><a class="" href="{{ url('/login') }}"><i class="" aria-hidden="true"></i>Login</a></li>
                             <li><a class="" href="{{ url('/register') }}"><i class="" aria-hidden="true"></i>Registrarse</a></li>
@@ -47,6 +48,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li><a class="" href="{{ url('/logout') }}"><i class="" aria-hidden="true"></i>Salir</a></li>
                         @endif
                         
+=======
+                        <li><a class="" href="{{ url('/login') }}"><i class="" aria-hidden="true"></i>Login</a></li>
+                        <li><a class="" href="{{ url('/register') }}"><i class="" aria-hidden="true"></i>Registrarse</a></li>
+>>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1
                     </ul>
                 </div>
                 <div class="clearfix"> </div>

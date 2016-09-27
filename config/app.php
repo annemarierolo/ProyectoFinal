@@ -1,6 +1,9 @@
 <?php
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1
 return [
 
     /*
@@ -162,7 +165,10 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+<<<<<<< HEAD
         Laravel\Socialite\SocialiteServiceProvider::class,
+=======
+>>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1
 
 
         /*
@@ -224,7 +230,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+<<<<<<< HEAD
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+=======
+>>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1
 
     ],
 
