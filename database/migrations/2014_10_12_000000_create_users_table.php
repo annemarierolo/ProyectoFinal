@@ -24,10 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('document',20);
             $table->string('document_number',20);
             $table->enum('sex', ['M', 'F']);
-<<<<<<< HEAD
             $table->boolean('activated')->default(false);
-=======
->>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1
             $table->timestamps();
         });
     }

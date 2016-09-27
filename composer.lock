@@ -4,13 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
     "hash": "20a2abd9d0d62b67c20c54ba79d4638e",
     "content-hash": "d1ba220af089f7d8473842750518b8fc",
-=======
-    "hash": "7406075b4b5b612847227be2fa8fb49a",
-    "content-hash": "e1517ba18efc29f486f8ebbdbb1acd31",
->>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -167,7 +162,6 @@
             "time": "2015-11-06 14:35:42"
         },
         {
-<<<<<<< HEAD
             "name": "guzzlehttp/guzzle",
             "version": "6.2.1",
             "source": {
@@ -339,8 +333,6 @@
             "time": "2016-06-24 23:00:38"
         },
         {
-=======
->>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -616,7 +608,6 @@
             "time": "2016-08-26 11:44:52"
         },
         {
-<<<<<<< HEAD
             "name": "laravel/socialite",
             "version": "v2.0.18",
             "source": {
@@ -671,8 +662,6 @@
             "time": "2016-06-22 12:40:16"
         },
         {
-=======
->>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1
             "name": "league/flysystem",
             "version": "1.0.27",
             "source": {
@@ -756,7 +745,6 @@
             "time": "2016-08-10 08:55:11"
         },
         {
-<<<<<<< HEAD
             "name": "league/oauth1-client",
             "version": "1.7.0",
             "source": {
@@ -820,8 +808,6 @@
             "time": "2016-08-17 00:36:58"
         },
         {
-=======
->>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1
             "name": "monolog/monolog",
             "version": "1.21.0",
             "source": {
@@ -1090,7 +1076,6 @@
             "time": "2016-03-18 20:34:03"
         },
         {
-<<<<<<< HEAD
             "name": "psr/http-message",
             "version": "1.0.1",
             "source": {
@@ -1141,8 +1126,6 @@
             "time": "2016-08-06 14:39:51"
         },
         {
-=======
->>>>>>> 24bc3e2da133fb2ab3e75b7fe006c4151ce426d1
             "name": "psr/log",
             "version": "1.0.1",
             "source": {
