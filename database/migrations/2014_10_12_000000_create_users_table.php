@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->enum('sex', ['M', 'F']);
             $table->boolean('activated')->default(false);
             $table->timestamps();
+
         });
     }
 

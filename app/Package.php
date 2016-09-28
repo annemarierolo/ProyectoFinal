@@ -7,10 +7,30 @@ use Illuminate\Database\Eloquent\Model;
 class Package extends Model
 {
     /**
-     * Get all of the Packages transactions.
+     * The attributes that are mass assignable.
+     *
+     * @var array
      */
-    public function typeTransaction()
-    {
-        return $this->morphMany('App\Transaction', 'transaction');
-    }
+    protected $fillable = [
+          'user_id'
+        , 'tittle'
+        , 'images'
+        , 'destiny'
+        , 'destiny_type'
+        , 'ticket_price'
+        , 'tickets_total'
+        , 'valid_from'
+        , 'valid_to'
+        , 'content'
+        ,
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        //'',
+    ];
 }

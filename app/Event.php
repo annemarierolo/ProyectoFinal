@@ -7,10 +7,31 @@ use Illuminate\Database\Eloquent\Model;
 class Event extends Model
 {
     /**
-     * Get all of the Events transactions.
+     * The attributes that are mass assignable.
+     *
+     * @var array
      */
-    public function typeTransaction()
-    {
-        return $this->morphMany('App\Transaction', 'transaction');
-    }
+    protected $fillable = [
+          'user_id'
+        , 'type_id'
+        , 'status_id'
+        , 'valid_from'
+        , 'valid_to'
+        , 'tickets_total'
+        , 'tickets_sold'
+        , 'ticket_price'
+        , 'address'
+        , 'tittle'
+        , 'description'
+        ,
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        //'',
+    ];
 }

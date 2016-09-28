@@ -21,7 +21,6 @@ class CreateNewsTable extends Migration
             $table->string('images', 45);
             $table->dateTime('date');
             $table->timestamps();
-            //$table->primary(['id', 'user_id']);
 
             $table->foreign('user_id')
                 ->references('id')->on('users');

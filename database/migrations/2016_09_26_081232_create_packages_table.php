@@ -24,7 +24,6 @@ class CreatePackagesTable extends Migration
             $table->date('valid_from');
             $table->date('valid_to');
             $table->text('content');
-            //$table->primary(['id', 'user_id']);
 
             $table->foreign('user_id')
                 ->references('id')->on('users');
