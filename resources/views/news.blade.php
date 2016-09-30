@@ -8,7 +8,7 @@
 						<div class="left-blog left-single">
 							<div class="blog-left">
 								<div class="single-left-left">
-									<p>Posted By <a href="#">Admin</a> &nbsp;&nbsp; on June 2, 2016 &nbsp;&nbsp; <a href="#">Comments (10)</a></p>
+									<p>Posted By <a href="#">Admin</a> &nbsp;&nbsp; on June 2, 2016 &nbsp;&nbsp; <!-- <a href="#">Comments (10)</a>--></p>
 									<img src="images/g9.jpg" alt="" />
 								</div>
 								<div class="blog-left-bottom">

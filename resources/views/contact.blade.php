@@ -29,6 +29,8 @@
 					<div class="contact-form-grid">
 						<form action="#" method="post">
 							<input type="text" name="Name" placeholder="Name" required="">
+							<input type="text" name="Name" placeholder="Apellido" required="">
+							<input type="text" name="Name" placeholder="Motivo" required="">
 							<input type="email" name="Email" placeholder="Email" required="">
 							<input type="text" name="Telephone" placeholder="Telephone" required="">
 							<textarea name="Message" placeholder="Message" required=""></textarea>

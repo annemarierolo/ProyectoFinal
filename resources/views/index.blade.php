@@ -43,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                              <li><a class="" href="{{ url('/login') }}"><i class="" aria-hidden="true"></i>Login</a></li>
                             <li><a class="" href="{{ url('/register') }}"><i class="" aria-hidden="true"></i>Registrarse</a></li>
                         @else
-                            <li><a class="" href="#"><i class="" aria-hidden="true"></i>{{ Auth::user()->name }}</a></li>
+                            <li><a class="" href="{{ url('/perfil') }}"><i class="" aria-hidden="true"></i>{{ Auth::user()->name }}</a></li>
                             <li><a class="" href="{{ url('/logout') }}"><i class="" aria-hidden="true"></i>Salir</a></li>
                         @endif
                         
@@ -83,50 +83,50 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
     <!-- //banner -->
     <div id="kb" class="carousel kb_elastic animate_text kb_wrapper" data-ride="carousel" data-interval="6000" data-pause="hover">
-            <!-- Wrapper for Slides -->
-            <div class="carousel-inner" role="listbox">
-                <!-- First Slide -->
-                <div class="item active">
-                    <div class="slider">
-                        <div class="carousel-caption kb_caption slider-grid">
-                            <h3>Singapore</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner" role="listbox">
+            <!-- First Slide -->
+            <div class="item active">
+                <div class="slider">
+                    <div class="carousel-caption kb_caption slider-grid">
+                        <h3>Singapore</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                 </div>
-
-                <!-- Second Slide -->
-                <div class="item">
-                    <div class="slider slider1">
-                        <div class="carousel-caption kb_caption kb_caption_right slider-grid">
-                            <h3>Hawaii</h3>
-                            <p>Vivamus vel nulla venenatis, tincidunt mi vel, consequat erat.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Third Slide -->
-                <div class="item">
-                    <div class="slider slider2">
-                        <div class="carousel-caption kb_caption kb_caption_center slider-grid">
-                           <h3>Hong Kong</h3>
-                            <p>Nunc turpis purus, vestibulum at quam ac, feugiat dignissim nunc</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-            <!-- Navigation Buttons -->
-            <!-- Left Button -->
-            <a class="left carousel-control kb_control_left" href="#kb" role="button" data-slide="prev">
-                <span class="fa fa-angle-left kb_icons" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <!-- Right Button -->
-            <a class="right carousel-control kb_control_right" href="#kb" role="button" data-slide="next">
-                <span class="fa fa-angle-right kb_icons" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+
+            <!-- Second Slide -->
+            <div class="item">
+                <div class="slider slider1">
+                    <div class="carousel-caption kb_caption kb_caption_right slider-grid">
+                        <h3>Hawaii</h3>
+                        <p>Vivamus vel nulla venenatis, tincidunt mi vel, consequat erat.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third Slide -->
+            <div class="item">
+                <div class="slider slider2">
+                    <div class="carousel-caption kb_caption kb_caption_center slider-grid">
+                       <h3>Hong Kong</h3>
+                        <p>Nunc turpis purus, vestibulum at quam ac, feugiat dignissim nunc</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Navigation Buttons -->
+        <!-- Left Button -->
+        <a class="left carousel-control kb_control_left" href="#kb" role="button" data-slide="prev">
+            <span class="fa fa-angle-left kb_icons" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <!-- Right Button -->
+        <a class="right carousel-control kb_control_right" href="#kb" role="button" data-slide="next">
+            <span class="fa fa-angle-right kb_icons" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div> 
     <!-- about -->
     <div class="about">
@@ -138,22 +138,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="about-grids">
                 <div class="col-md-3 about-grid">
                     <div class="about-grid-info effect-1">
-                        <h4>San Francisco</h4>
+                        @if(Auth::guest())
+                                <a href="{{ url('/login') }}" class="boton_cotizar">San Francisco</a>
+                            @else
+                                <a href="{{ url('/cotizar') }}" class="boton_cotizar">San Francisco</a>
+                            @endif
                     </div>
                 </div>
                 <div class="col-md-3 about-grid">
                     <div class="about-grid-info about-grid-info1 effect-1">
-                        <h4>Maldives</h4>
+                       @if(Auth::guest())
+                            <a href="{{ url('/login') }}" class="boton_cotizar">Maldives</a>
+                        @else
+                            <a href="{{ url('/cotizar') }}" class="boton_cotizar">Maldives</a>
+                        @endif
                     </div>
                 </div>
                 <div class="col-md-3 about-grid">
                     <div class="about-grid-info about-grid-info2 effect-1">
-                        <h4>Ireland</h4>
+                        @if(Auth::guest())
+                            <a href="{{ url('/login') }}" class="boton_cotizar">Ireland</a>
+                        @else
+                            <a href="{{ url('/cotizar') }}" class="boton_cotizar">Ireland</a>
+                         @endif
                     </div>
                 </div>
                 <div class="col-md-3 about-grid">
                     <div class="about-grid-info about-grid-info3 effect-1">
-                        <h4>New Zealand</h4>
+                        @if(Auth::guest())
+                            <a href="{{ url('/login') }}" class="boton_cotizar">New Zealand</a>
+                        @else
+                             <a href="{{ url('/cotizar') }}" class="boton_cotizar">New Zealand</a>
+                        @endif
                     </div>
                 </div>
                 <div class="clearfix"> </div>
@@ -276,7 +292,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="clearfix"> </div>
                             </div>
                             <div class="news-grid-info-bottom-text">
-                                <a href="single.html">Quisque gravida, nunc eu interdum porta</a>
+                                <a href="{{ url('/noticias') }}">Quisque gravida, nunc eu interdum porta</a>
                                 <p>Aliquam erat volutpat. Duis vulputate tempus laoreet. Integer viverra eleifend neque, eget dictum lectus. Quisque eu tempor dolor.</p>
                             </div>
                         </div>
@@ -298,7 +314,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="clearfix"> </div>
                             </div>
                             <div class="news-grid-info-bottom-text">
-                                <a href="single.html">Quisque gravida, nunc eu interdum porta</a>
+                                <a href="{{ url('/noticias') }}">Quisque gravida, nunc eu interdum porta</a>
                                 <p>Aliquam erat volutpat. Duis vulputate tempus laoreet. Integer viverra eleifend neque, eget dictum lectus. Quisque eu tempor dolor.</p>
                             </div>
                         </div>
@@ -312,7 +328,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="news-grid-info-bottom">
                             <div class="date-grid">
                                 <div class="admin">
-                                    <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Admin</a>
+                                    <a href="{{ url('/noticias') }}"><i class="fa fa-user" aria-hidden="true"></i> Admin</a>
                                 </div>
                                 <div class="time">
                                     <p><i class="fa fa-calendar" aria-hidden="true"></i> May 09,2016</p>
@@ -320,7 +336,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="clearfix"> </div>
                             </div>
                             <div class="news-grid-info-bottom-text">
-                                <a href="single.html">Quisque gravida, nunc eu interdum porta</a>
+                                <a href="{{ url('/noticias') }}">Quisque gravida, nunc eu interdum porta</a>
                                 <p>Aliquam erat volutpat. Duis vulputate tempus laoreet. Integer viverra eleifend neque, eget dictum lectus. Quisque eu tempor dolor.</p>
                             </div>
                         </div>

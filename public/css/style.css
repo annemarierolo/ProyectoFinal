@@ -221,13 +221,18 @@ ul.nav.navbar-nav {
     background-size: cover;
     min-height: 255px;
 }
-.about-grid-info h4{
+.about-grid-info a{
     color: #FFF;
     font-size: 2em;
     margin: 0;
     font-family: 'Pacifico', cursive;
     line-height: 7.5em;
 }
+
+.about-grid-info a:hover{
+    text-decoration:none;
+}
+
 .about-grid-info1{
 	background: url(../images/a1.png)no-repeat 0px 0px;
 	background-size: cover;

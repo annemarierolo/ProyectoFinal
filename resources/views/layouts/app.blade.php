@@ -40,7 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                              <li><a class="" href="{{ url('/login') }}"><i class="" aria-hidden="true"></i>Login</a></li>
                             <li><a class="" href="{{ url('/register') }}"><i class="" aria-hidden="true"></i>Registrarse</a></li>
                         @else
-                            <li><a class="" href="#"><i class="" aria-hidden="true"></i>{{ Auth::user()->name }}</a></li>
+                            <li><a class="" href="{{ url('/perfil') }}"><i class="" aria-hidden="true"></i>{{ Auth::user()->name }}</a></li>
                              <li><a class="" href="{{ url('/logout') }}"><i class="" aria-hidden="true"></i>Salir</a></li>
                         @endif
                     </ul>
