@@ -26,6 +26,7 @@ class CreateEventsTable extends Migration
             $table->string('address',80);
             $table->text('tittle');
             $table->text('description');
+            $table->string('image', 45);
 
             $table->foreign('user_id')
                 ->references('id')->on('users');

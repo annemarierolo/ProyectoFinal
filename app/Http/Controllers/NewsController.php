@@ -2,12 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+use Cviebrock\ImageValidator\ImageValidator;
 
-use App\Http\Requests;
+use App\News;
+//use App\Http\Requests;
+//use Auth;
+//use Illuminate\Validation\Validator;
+//use Illuminate\Support\Facades\Validator;
+//use Illuminate\Contracts\Validation\Validator;
+
 
 class NewsController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +35,12 @@ class NewsController extends Controller
      */
     public function index()
     {
+        $news = News::paginate(10);
 
+        if(Auth::user()->hasRole('Administrador'))
+            return view('news.index', ['news' => $news]);
+        else
+            return redirect('/');
     }
 
     /**
@@ -25,7 +50,8 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        $news = new News();
+        return view('news.create',['news'=>$news]);
     }
 
     /**
@@ -36,7 +62,33 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $v = Validator::make($request->all(),[
+            'tittle'    => 'required|max:100',
+            'summary'   => 'required|max:255',
+            'content'   => 'required',
+            'image'     => 'required|mimes:jpeg,png|max:500|image_size:<=300,<=600', //'max:45', //
+            'date'      => 'required',
+        ]);
+
+        if ($v->fails()) {
+            return redirect('news/create')
+                ->withErrors($v)
+                ->withInput();
+        }
+
+        $imageName = $request->file('image')->getClientOriginalName();
+        $path = base_path() . "/public/images/news/";
+        $request->file('image')->move($path, $imageName);
+
+        News::create([
+            'tittle'    => $request->input('tittle'),
+            'summary'   => $request->input('summary'),
+            'content'   => $request->input('content'),
+            'image'     => $imageName,
+            'date'      => $request->input('date'),
+        ]);
+
+        return redirect('/news');
     }
 
     /**
@@ -47,7 +99,8 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        //
+        $news = News::findOrFail($id);
+        return view('news.show',['news'=>$news]);
     }
 
     /**
@@ -58,7 +111,8 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $news = News::findOrFail($id);
+        return view('news.edit',['news'=>$news]);
     }
 
     /**
@@ -70,7 +124,37 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $v = Validator::make($request->all(),[
+            'tittle'    => 'required|max:100',
+            'summary'   => 'required|max:255',
+            'content'   => 'required',
+            'image'     => 'required|mimes:jpeg,png|max:500|image_size:<=300,<=600', // 'max:45', //
+            'date'      => 'required|date',
+        ]);
+
+        if ($v->fails()) {
+            return redirect('news/create')
+                ->withErrors($v)
+                ->withInput();
+        }
+        $news = News::findOrFail($id);
+        $imageName = $request->file('image')->getClientOriginalName();
+
+        if($news->image!=$imageName){
+            $path = base_path() . "/public/images/news/";
+            $request->file('image')->move($path, $imageName);
+            File::delete($path.$news->image);
+        }
+
+        $news::update([
+            'tittle'    => $request->input('tittle'),
+            'summary'   => $request->input('summary'),
+            'content'   => $request->input('content'),
+            'image'     => $imageName,
+            'date'      => $request->input('date'),
+        ]);
+
+        return redirect('/news');
     }
 
     /**
@@ -81,6 +165,7 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        News::destroy($id);
+        return redirect('/news');
     }
 }

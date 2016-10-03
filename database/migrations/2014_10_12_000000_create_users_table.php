@@ -20,10 +20,10 @@ class CreateUsersTable extends Migration
             $table->string('password',255);
             $table->rememberToken();
             $table->string('phone_number',15);
-            $table->string('user_type',15);
+            $table->enum('nacionality', ['V', 'E']);
             $table->string('document',20);
             $table->string('document_number',20);
-            $table->enum('sex', ['M', 'F']);
+            $table->enum('sex', ['M', 'F', 'N/A']);
             $table->boolean('activated')->default(false);
             $table->timestamps();
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My Trip a Travel Category Flat Bootstrap responsive Website Template | Contact :: w3layouts</title>
+<title>Tio Ven</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="My Trip Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -40,9 +40,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                              <li><a class="" href="{{ url('/login') }}"><i class="" aria-hidden="true"></i>Login</a></li>
                             <li><a class="" href="{{ url('/register') }}"><i class="" aria-hidden="true"></i>Registrarse</a></li>
                         @else
-                            <li><a class="" href="{{ url('/perfil') }}"><i class="" aria-hidden="true"></i>{{ Auth::user()->name }}</a></li>
-                             <li><a class="" href="{{ url('/logout') }}"><i class="" aria-hidden="true"></i>Salir</a></li>
+                            <li><a class="" href="#"><i class="" aria-hidden="true"></i>{{ Auth::user()->name }}</a></li>
+                        @if(Auth::user()->hasRole('Administrador'))
+                                 <li><a class="" href="{{ url('/admin') }}"><i class="" aria-hidden="true"></i>Dashboard</a></li>
                         @endif
+                            <li><a class="" href="{{ url('/logout') }}"><i class="" aria-hidden="true"></i>Salir</a></li>
+                        @endif
+
                     </ul>
                 </div>
                 <div class="clearfix"> </div>
@@ -65,7 +69,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><a href="{{ url('/') }}">Inicio</a></li>
                                 <li><a href="{{ url('/somos') }}">Quienes Somos</a></li>
                                 <li><a href="{{ url('/paquetes') }}">Paquetes</a></li>
-                                <li><a href="{{ url('/eventos')}}">Eventos</a></li>
+                                <li><a href="{{ url('events')}}">Eventos</a></li>
                                 <li><a href="{{ url('/noticias')}}">Noticias</a></li>
                                 <li><a href="{{ url('/contacto')}}">Contacto</a></li>
                                 <div class="clearfix"> </div>

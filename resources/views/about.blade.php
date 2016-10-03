@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Tio Ven :: Quienes Somos')
 @section('content')
 	<!-- a-about -->
 	<div class="a-grid">
@@ -225,7 +226,7 @@
 						<ul>
 							<li><a href="{{ url('/somos') }}">Quienes Somos</a></li>
 							<li><a href="{{ url('paquetes') }}">Paquetes</a></li>
-							<li><a href="{{ url('/eventos') }}">Eventos</a></li>
+							<li><a href="{{ url('events') }}">Eventos</a></li>
 							<li><a href="{{ url('/noticias')}}">Noticias</a></li>
 							<li><a href="{{ url('/contacto')}}">Contacto</a></li>
 						</ul>

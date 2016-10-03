@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Tio Ven :: Contacto')
 @section('content')
 
 <!-- contact -->
@@ -29,8 +30,6 @@
 					<div class="contact-form-grid">
 						<form action="#" method="post">
 							<input type="text" name="Name" placeholder="Name" required="">
-							<input type="text" name="Name" placeholder="Apellido" required="">
-							<input type="text" name="Name" placeholder="Motivo" required="">
 							<input type="email" name="Email" placeholder="Email" required="">
 							<input type="text" name="Telephone" placeholder="Telephone" required="">
 							<textarea name="Message" placeholder="Message" required=""></textarea>
@@ -59,7 +58,7 @@
 						<ul>
 							<li><a href="{{ url('/somos') }}">Quienes Somos</a></li>
 							<li><a href="{{ url('/paquetes') }}">Paquetes</a></li>
-							<li><a href="{{ url('/eventos') }}">Eventos</a></li>
+							<li><a href="{{ url('events') }}">Eventos</a></li>
 							<li><a href="{{ url('/noticias') }}">Noticias</a></li>
 							<li><a href="{{ url('/contacto') }}">Contacto</a></li>
 						</ul>

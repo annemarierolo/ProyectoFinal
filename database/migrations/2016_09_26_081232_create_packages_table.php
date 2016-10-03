@@ -16,7 +16,7 @@ class CreatePackagesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('tittle', 45);
-            $table->string('images');
+            $table->string('image', 45);
             $table->string('destiny',45);
             $table->enum('destiny_type', ['NACIONAL', 'INTERNACIONAL']);
             $table->decimal('ticket_price', 8, 2);
@@ -24,6 +24,7 @@ class CreatePackagesTable extends Migration
             $table->date('valid_from');
             $table->date('valid_to');
             $table->text('content');
+            $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')->on('users');

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<style>
+@section('title', 'Tio Ven :: Paquetes')
 	.boton_cotizar{
 		display:block;
 		background:#fd5c63;
@@ -175,7 +175,7 @@
 						<ul>
 							<li><a href="{{ url('/somos') }}">Quienes Somos</a></li>
 							<li><a href="{{ url('/paquetes')}}">Paquetes</a></li>
-							<li><a href="{{ url('/eventos') }}">Eventos</a></li>
+							<li><a href="{{ url('events') }}">Eventos</a></li>
 							<li><a href="{{ url('/noticias') }}">Noticias</a></li>
 							<li><a href="{{ url('/contacto')}}">Contacto</a></li>
 						</ul>

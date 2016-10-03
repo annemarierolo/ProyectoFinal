@@ -221,18 +221,13 @@ ul.nav.navbar-nav {
     background-size: cover;
     min-height: 255px;
 }
-.about-grid-info a{
+.about-grid-info h4{
     color: #FFF;
     font-size: 2em;
     margin: 0;
     font-family: 'Pacifico', cursive;
     line-height: 7.5em;
 }
-
-.about-grid-info a:hover{
-    text-decoration:none;
-}
-
 .about-grid-info1{
 	background: url(../images/a1.png)no-repeat 0px 0px;
 	background-size: cover;
@@ -2534,6 +2529,9 @@ button.btn1:hover{
 	.contact-form-grid textarea {
 		font-size: 0.8em;
 	}
+}
+.dropdown-menu > li > a, .dropdown-menu > li > a:visited {
+    color:#000;
 }
 /*-- //responsive --*/
 

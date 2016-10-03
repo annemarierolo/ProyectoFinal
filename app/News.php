@@ -16,7 +16,7 @@ class News extends Model
         , 'tittle'
         , 'summary'
         , 'content'
-        , 'images'
+        , 'image'
         , 'date'
         ,
     ];

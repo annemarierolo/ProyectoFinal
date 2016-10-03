@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>My Trip a Travel Category Flat Bootstrap responsive Website Template | Home :: w3layouts</title>
+<title>Tio Ven</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="My Trip Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -43,10 +43,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                              <li><a class="" href="{{ url('/login') }}"><i class="" aria-hidden="true"></i>Login</a></li>
                             <li><a class="" href="{{ url('/register') }}"><i class="" aria-hidden="true"></i>Registrarse</a></li>
                         @else
-                            <li><a class="" href="{{ url('/perfil') }}"><i class="" aria-hidden="true"></i>{{ Auth::user()->name }}</a></li>
+                            <li><a class="" href="#"><i class="" aria-hidden="true"></i>{{ Auth::user()->name }}</a></li>
+                        @if(Auth::user()->hasRole('Administrador'))
+                                 <li><a class="" href="{{ url('/admin') }}"><i class="" aria-hidden="true"></i>Dashboard</a></li>
+                        @endif
                             <li><a class="" href="{{ url('/logout') }}"><i class="" aria-hidden="true"></i>Salir</a></li>
                         @endif
-                        
                     </ul>
                 </div>
                 <div class="clearfix"> </div>
@@ -69,7 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><a class="active" href="{{ url('/') }}">Inicio</a></li>
                                 <li><a href="{{ url('/somos') }}">Quienes Somos</a></li>
                                 <li><a href="{{ url('/paquetes') }}">Paquetes</a></li>
-                                <li><a href="{{ url('/eventos') }}">Eventos</a></li>
+                                <li><a href="{{ url('events') }}">Eventos</a></li>
                                 <li><a href="{{ url('/noticias')}}">Noticias</a></li>
                                 <li><a href="{{ url('/contacto')}}">Contacto</a></li>
                                 <div class="clearfix"> </div>
@@ -82,13 +84,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //banner -->
+
     <div id="kb" class="carousel kb_elastic animate_text kb_wrapper" data-ride="carousel" data-interval="6000" data-pause="hover">
         <!-- Wrapper for Slides -->
         <div class="carousel-inner" role="listbox">
+
             <!-- First Slide -->
             <div class="item active">
                 <div class="slider">
-                    <div class="carousel-caption kb_caption slider-grid">
+                    <div class="carousel-caption kb_caption slider-grid" >
                         <h3>Singapore</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
@@ -127,8 +131,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <span class="fa fa-angle-right kb_icons" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-    </div> 
-    <!-- about -->
+    </div>
+
+    <!-- Paquetes -->
     <div class="about">
         <div class="container">
             <div class="w3l-about-heading">
@@ -138,38 +143,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="about-grids">
                 <div class="col-md-3 about-grid">
                     <div class="about-grid-info effect-1">
-                        @if(Auth::guest())
-                                <a href="{{ url('/login') }}" class="boton_cotizar">San Francisco</a>
-                            @else
-                                <a href="{{ url('/cotizar') }}" class="boton_cotizar">San Francisco</a>
-                            @endif
+                        <h4>San Francisco</h4>
                     </div>
                 </div>
                 <div class="col-md-3 about-grid">
                     <div class="about-grid-info about-grid-info1 effect-1">
-                       @if(Auth::guest())
-                            <a href="{{ url('/login') }}" class="boton_cotizar">Maldives</a>
-                        @else
-                            <a href="{{ url('/cotizar') }}" class="boton_cotizar">Maldives</a>
-                        @endif
+                        <h4>Maldives</h4>
                     </div>
                 </div>
                 <div class="col-md-3 about-grid">
                     <div class="about-grid-info about-grid-info2 effect-1">
-                        @if(Auth::guest())
-                            <a href="{{ url('/login') }}" class="boton_cotizar">Ireland</a>
-                        @else
-                            <a href="{{ url('/cotizar') }}" class="boton_cotizar">Ireland</a>
-                         @endif
+                        <h4>Ireland</h4>
                     </div>
                 </div>
                 <div class="col-md-3 about-grid">
                     <div class="about-grid-info about-grid-info3 effect-1">
-                        @if(Auth::guest())
-                            <a href="{{ url('/login') }}" class="boton_cotizar">New Zealand</a>
-                        @else
-                             <a href="{{ url('/cotizar') }}" class="boton_cotizar">New Zealand</a>
-                        @endif
+                        <h4>New Zealand</h4>
                     </div>
                 </div>
                 <div class="clearfix"> </div>
@@ -177,6 +166,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //about -->
+
     <!-- offer -->
     <div class="offer">
         <div class="container">
@@ -190,6 +180,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!-- //offer -->
+
     <!-- news -->
     <div class="news">
         <div class="container">
@@ -292,7 +283,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="clearfix"> </div>
                             </div>
                             <div class="news-grid-info-bottom-text">
-                                <a href="{{ url('/noticias') }}">Quisque gravida, nunc eu interdum porta</a>
+                                <a href="single.html">Quisque gravida, nunc eu interdum porta</a>
                                 <p>Aliquam erat volutpat. Duis vulputate tempus laoreet. Integer viverra eleifend neque, eget dictum lectus. Quisque eu tempor dolor.</p>
                             </div>
                         </div>
@@ -314,7 +305,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="clearfix"> </div>
                             </div>
                             <div class="news-grid-info-bottom-text">
-                                <a href="{{ url('/noticias') }}">Quisque gravida, nunc eu interdum porta</a>
+                                <a href="single.html">Quisque gravida, nunc eu interdum porta</a>
                                 <p>Aliquam erat volutpat. Duis vulputate tempus laoreet. Integer viverra eleifend neque, eget dictum lectus. Quisque eu tempor dolor.</p>
                             </div>
                         </div>
@@ -328,7 +319,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <div class="news-grid-info-bottom">
                             <div class="date-grid">
                                 <div class="admin">
-                                    <a href="{{ url('/noticias') }}"><i class="fa fa-user" aria-hidden="true"></i> Admin</a>
+                                    <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Admin</a>
                                 </div>
                                 <div class="time">
                                     <p><i class="fa fa-calendar" aria-hidden="true"></i> May 09,2016</p>
@@ -336,7 +327,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="clearfix"> </div>
                             </div>
                             <div class="news-grid-info-bottom-text">
-                                <a href="{{ url('/noticias') }}">Quisque gravida, nunc eu interdum porta</a>
+                                <a href="single.html">Quisque gravida, nunc eu interdum porta</a>
                                 <p>Aliquam erat volutpat. Duis vulputate tempus laoreet. Integer viverra eleifend neque, eget dictum lectus. Quisque eu tempor dolor.</p>
                             </div>
                         </div>
@@ -364,7 +355,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <ul>
                             <li><a href="{{ url('/somos') }}">Quienes Somos</a></li>
                             <li><a href="{{ url('/paquetes')}}">Paquetes</a></li>
-                            <li><a href="{{ url('/eventos') }}">Eventos</a></li>
+                            <li><a href="{{ url('events') }}">Eventos</a></li>
                             <li><a href="{{ url('/noticias')}}">Noticias</a></li>
                             <li><a href="{{ url('/contacto')}}">Contacto</a></li>
                         </ul>

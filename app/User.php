@@ -3,9 +3,13 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
+
 
 class User extends Authenticatable
 {
+
+     use HasRoles;
     /**
      * The attributes that are mass assignable.
      *
@@ -41,5 +45,10 @@ class User extends Authenticatable
     public function subscriber()
     {
         return $this->hasOne('App\Subscriber');
+    }
+
+    public function role(){
+
+        return $this->hasRole('');
     }
 }

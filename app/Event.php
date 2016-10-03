@@ -23,6 +23,7 @@ class Event extends Model
         , 'address'
         , 'tittle'
         , 'description'
+        , 'image'
         ,
     ];
 

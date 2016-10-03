@@ -21,10 +21,10 @@ Route::get('/somos', function () {
 });
 
 Route::get('/paquetes', function () {
-    return view('package');
+    return view('packages');
 });
 
-Route::get('/eventos', function () {
+Route::get('/events', function () {
     return view('events');
 });
 
@@ -36,9 +36,15 @@ Route::get('/contacto', function () {
     return view('contact');
 });
 
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('/paquetes', 'PackageController');
+    Route::resource('/events', 'EventsController');
+});
 
-Route::get('/home', 'HomeController@index');
+Route::get('/admin', 'HomeController@index');
 Route::get('user/activation/{token}', 'Auth\AuthController@activateUser')->name('user.activate');
+
+Route::resource('/news', 'NewsController');
 
 Route::get('/redirect/{provider}', 'SocialAuthController@redirect');
 Route::get('/callback/{provider}', 'SocialAuthController@callback');

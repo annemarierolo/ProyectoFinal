@@ -14,7 +14,7 @@ class Package extends Model
     protected $fillable = [
           'user_id'
         , 'tittle'
-        , 'images'
+        , 'image'
         , 'destiny'
         , 'destiny_type'
         , 'ticket_price'
