@@ -18,6 +18,7 @@ class CreateSlidersTable extends Migration
             $table->string('url', 45);
             $table->string('image', 45);
             $table->enum('status', ['ACTIVE', 'INACTIVE']);
+            $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')->on('users');

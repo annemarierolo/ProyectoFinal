@@ -19,8 +19,9 @@ class CreateTransactionsTable extends Migration
             $table->enum('transaction_type', ['EVENT', 'PACKAGE']);
             $table->integer('status_id');
             $table->dateTime('date');
-            $table->integer('transacction_tickets');
-            $table->decimal('transacction_amount', 8, 2);
+            $table->integer('transaction_tickets');
+            $table->decimal('transaction_amount', 8, 2);
+            $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')->on('users');

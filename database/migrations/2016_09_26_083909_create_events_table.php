@@ -17,7 +17,6 @@ class CreateEventsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('type_id')->unsigned();
             $table->integer('status_id')->unsigned();
-            $table->timestamps();
             $table->date('valid_from');
             $table->date('valid_to');
             $table->integer('tickets_total');
@@ -27,6 +26,7 @@ class CreateEventsTable extends Migration
             $table->text('tittle');
             $table->text('description');
             $table->string('image', 45);
+            $table->timestamps();
 
             $table->foreign('user_id')
                 ->references('id')->on('users');

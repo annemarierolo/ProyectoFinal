@@ -15,6 +15,7 @@ class CreateTransactionsStatusTable extends Migration
         Schema::create('transactions_status', function (Blueprint $table) {
             $table->integer('id');
             $table->string('status_name',45);
+
             $table->primary('id');
         });
     }
